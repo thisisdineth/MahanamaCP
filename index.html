@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahanma College Paper Bank</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        overflow-x: hidden;
+        background-color: #bda80a;
+        color: #fff;
+      }
+
+      header {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-attachment: fixed;
+        background: linear-gradient(to bottom, rgba(40, 35, 1, 0.5), rgba(0, 0, 0, 0.7)),
+          url('school.jpg') no-repeat center center/cover;
+        clip-path: circle(180vh at 50% -80vh);
+        animation: backgroundFade 10s infinite alternate;
+      }
+
+      .logo {
+        width: 150px;
+        height: 150px;
+        background: url('school.png') no-repeat center center/contain;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 3em;
+        text-align: center;
+        margin-bottom: 20px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 20px;
+      }
+
+      .button {
+        position: relative;
+        padding: 10px 20px;
+        background: #ffe136;
+        color: #000;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background 0.3s, transform 0.3s;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .button:hover {
+        background: #fff;
+        transform: scale(1.1);
+      }
+
+      .view-papers-button:before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        background: linear-gradient(45deg, #ffe136, #fff);
+        border-radius: 30px;
+        z-index: -1;
+        opacity: 0.6;
+        animation: wave 2s infinite linear;
+      }
+
+      .view-papers-button:hover:before {
+        opacity: 1;
+      }
+
+      @keyframes wave {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes backgroundFade {
+        0% {
+          filter: brightness(1);
+        }
+        100% {
+          filter: brightness(0.7);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2em;
+        }
+
+        .buttons {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <h1>Welcome to Mahanma College Paper Bank</h1>
+      <div class="buttons">
+        <a href="https://mcpm-seven.vercel.app/papers" class="button view-papers-button">View Papers</a>
+        <a href="https://mcpm-seven.vercel.app/signIn" class="button">Upload Papers</a>
+      </div>
+    </header>
+  </body>
+</html>
